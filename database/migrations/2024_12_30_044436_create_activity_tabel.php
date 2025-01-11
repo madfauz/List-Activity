@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('type');
             $table->string('description')->nullable(true);
+            $table->boolean( 'status')->nullable(false);
+            $table->string('time_start');
+            $table->string('time_end');
             $table->timestamps();
         });
     }

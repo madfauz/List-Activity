@@ -31,13 +31,19 @@
                                   Descrtiption
                                 </th>
                   <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                  Status
+                                </th>
+                  <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                  Time
+                  </th>
+                  <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                                   Manage
                   </th>
                   </tr>
                 </thead>
         
                 <tbody>
-                    <?php $index = 1 ?>
+                  <?php $index = 1 ?>
                   @foreach($data_activities as $activity)
                   <tr>
                     <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
@@ -53,6 +59,12 @@
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                       <i class="fas fa-arrow-up text-emerald-500 mr-4"></i>
                       {{$activity->description}}
+                    </td>
+                    <td class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                      {{$activity->status}}
+                    </td>
+                    <td class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                      {{$activity->time_start}} - {{$activity->time_end}}
                     </td>
                     <td class="flex gap-2 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                       <a href="{{ route('activity.edit', $activity->id) }}">

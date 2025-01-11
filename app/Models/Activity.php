@@ -17,6 +17,9 @@ class Activity extends Model
         "name",
         "type",
         "description",
+        "status",
+        "time_start",
+        "time_end",
     ];
 
     protected $table = "activity";

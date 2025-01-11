@@ -22,6 +22,7 @@
                 <option disabled>Select a type</option>
                 <option value="daily" {{ $data_activity->type == 'daily' ? 'selected' : '' }}>Daily</option>
                 <option value="weekly" {{ $data_activity->type == 'weekly' ? 'selected' : '' }}>Weekly</option>
+                <option value="monthly" {{ $data_activity->type == 'monthly' ? 'selected' : '' }}>Monthly"></option>
                 <option value="once in a while" {{ $data_activity->type == 'once in a while' ? 'selected' : '' }}>Once in a while</option>
                 <option value="only once" {{ $data_activity->type == 'only once' ? 'selected' : '' }}>Only once</option>
               </select>

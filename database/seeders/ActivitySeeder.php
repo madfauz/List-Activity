@@ -20,12 +20,18 @@ class ActivitySeeder extends Seeder
             "id"=> \Illuminate\Support\Str::uuid(),
             "name" => "Study",
             "type" => "Routine",
-            "description" => "Study"
+            "description" => "Study",
+            "status"=> 1,
+            "time_start" => "08:00",
+            "time_end"=> "11:00",
         ],[
             "id"=> \Illuminate\Support\Str::uuid(),
             "name" => "Sleep",
             "type"=> "Routine",
             "description"=> "Sleep",
+            "status"=> 0,
+            "time_start" => "08:00",
+            "time_end"=> "11:00",
         ]];
 
         foreach ($activites as $activity) {

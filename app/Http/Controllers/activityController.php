@@ -32,16 +32,25 @@ class activityController extends Controller
         $request->validate([
             "name" => "required|unique:activity,name",
             "type" => "required",
+            "status"=>"required",
+            "time_start"=>"required",
+            "time_end"=>"required",
         ],[
             "name.unique"=> "Name already exists",
             "name.required"=> "Name is required",
             "type.required"=> "Type is required",
+            "status.required"=> "Status is required",
+            "time_start.required"=> "Time start is required",
+            "time_end.required"=> "Time end is required",
         ]);
 
         $data = [
             "name" => $request->name,
             "type" => $request->type,
             "description" => $request->description ?? null,
+            "status" => $request->status,
+            "time_start" => $request->time_start,
+            "time_end" => $request->time_end
         ];
 
         Activity::create($data);
