@@ -28,7 +28,7 @@
           </div>
           <div class="flex flex-col mb-4">
             <span for="status" class="mb-1 text-[12px] sm:text-[16px] font-semibold tracking-wide text-gray-600">Status</span>
-            <div class="flex space-x-2">
+            <div class="flex gap-2">
               <!-- Active -->
               <div class="w-1/2">
                   <input type="radio" name="status" value="1" id="active" class="peer hidden" @checked(old('status') == 1)>

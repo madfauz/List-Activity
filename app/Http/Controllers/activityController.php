@@ -83,9 +83,15 @@ class activityController extends Controller
         $request->validate([
             "name" => "required",
             "type" => "required",
+            "status"=> "required",
+            "time_start"=> "required",
+            "time_end"=> "required",
         ],[
             "name.required"=> "Name is required",
             "type.required"=> "Type is required",
+            "status.required"=> "Status is required",
+            "time_start.required"=> "Time start is required",
+            "time_end.required"=> "Time end is required",
         ]);
 
         $activity = Activity::findOrFail($id);
@@ -93,6 +99,9 @@ class activityController extends Controller
             "name" => $request->name,
             "type" => $request->type,
             "description" => $request->description ?? null,
+            "status" => $request->status,
+            "time_start"=> $request->time_start,
+            "time_end"=> $request->time_end
         ]);
 
         return redirect()->route("activity.index")->with("success", "Activity updated successfully");
